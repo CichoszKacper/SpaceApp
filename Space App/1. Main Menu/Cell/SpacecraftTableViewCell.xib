@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpacecraftTableViewCell" rowHeight="729" id="KGk-i7-Jjw" customClass="SpacecraftTableViewCell" customModule="Space_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="603" height="729"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="603" height="729"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-0c-gjg">
+                        <rect key="frame" x="10" y="20" width="583" height="0.0"/>
+                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="33"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZ9-wo-EiB">
+                        <rect key="frame" x="25" y="60" width="553" height="2"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Zwe-MK-Wi8"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOG-wV-W34">
+                        <rect key="frame" x="30" y="82" width="543" height="0.0"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jq-NV-s6u">
+                        <rect key="frame" x="30" y="102" width="543" height="616"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1rh-0c-gjg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="4Td-fw-j13"/>
+                    <constraint firstItem="7jq-NV-s6u" firstAttribute="top" secondItem="LOG-wV-W34" secondAttribute="bottom" constant="20" id="G1V-9g-nDd"/>
+                    <constraint firstItem="7jq-NV-s6u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="LSi-3u-pI6"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7jq-NV-s6u" secondAttribute="bottom" id="NFO-sp-Pj6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LOG-wV-W34" secondAttribute="trailing" constant="10" id="QDD-nX-9mL"/>
+                    <constraint firstItem="LOG-wV-W34" firstAttribute="top" secondItem="PZ9-wo-EiB" secondAttribute="bottom" constant="20" id="Rwj-4e-YMg"/>
+                    <constraint firstAttribute="trailing" secondItem="1rh-0c-gjg" secondAttribute="trailing" constant="10" id="YWJ-bU-KqK"/>
+                    <constraint firstItem="1rh-0c-gjg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ao6-XB-dqo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PZ9-wo-EiB" secondAttribute="trailing" constant="5" id="eio-nP-3hz"/>
+                    <constraint firstItem="PZ9-wo-EiB" firstAttribute="top" secondItem="1rh-0c-gjg" secondAttribute="bottom" constant="40" id="hqQ-Kv-k5L"/>
+                    <constraint firstItem="PZ9-wo-EiB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="lLK-TK-MIY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7jq-NV-s6u" secondAttribute="trailing" constant="10" id="mDD-sW-zk6"/>
+                    <constraint firstItem="LOG-wV-W34" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="s6f-c1-qeX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="LOG-wV-W34" id="VtF-VJ-JZt"/>
+                <outlet property="spacecraftImageView" destination="7jq-NV-s6u" id="YX8-P3-KZx"/>
+                <outlet property="titleLabel" destination="1rh-0c-gjg" id="If1-Vv-Vx4"/>
+            </connections>
+            <point key="canvasLocation" x="131.53846153846155" y="167.41706161137441"/>
+        </tableViewCell>
+    </objects>
+</document>
