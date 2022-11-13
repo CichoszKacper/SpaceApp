@@ -16,6 +16,10 @@ class MainMenuViewController: ModelledViewController<MainMenuViewModel> {
 		self.viewModel.update?(.loading)
 		self.tableView.register(UINib(nibName: "SpacecraftTableViewCell", bundle: nil),
 								forCellReuseIdentifier: "SpacecraftTableViewCell")
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"),
+																 style: .plain,
+																 target: self,
+																 action: #selector(addTapped))
 	}
 	
 	override func updateView(_ type: MainMenuViewModel.UpdateType) {
@@ -27,6 +31,11 @@ class MainMenuViewController: ModelledViewController<MainMenuViewModel> {
 		case .reload:
 			self.tableView.reloadData()
 		}
+	}
+	
+	@objc func addTapped () {
+		//TODO: Display filter menu
+		print("works")
 	}
 }
 
