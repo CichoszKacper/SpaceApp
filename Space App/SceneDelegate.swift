@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 
 		let window = UIWindow(windowScene: windowScene)
-		let navigationController = NavigationController(rootViewController: MainMenuViewController(viewModel: MainMenuViewModel()))
+		let navigationController = NavigationController(rootViewController: UIHostingController(rootView: MainMenuView(viewModel: MainMenuViewModel())))
 		navigationController.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward.circle.fill")
 		navigationController.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward.circle.fill")
 		window.rootViewController = navigationController

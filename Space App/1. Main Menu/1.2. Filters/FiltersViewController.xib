@@ -9,9 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenuViewController" customModule="Space_App" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="Space_App" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="glY-bv-7RR" id="MkB-Hh-fAL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,24 +19,21 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="glY-bv-7RR">
-                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="iyC-dK-bTs"/>
-                        <outlet property="delegate" destination="-1" id="pCb-IM-bBx"/>
-                    </connections>
-                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKg-jL-qJd">
+                    <rect key="frame" x="10" y="57" width="370" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="glY-bv-7RR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hyq-tg-1t5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="glY-bv-7RR" secondAttribute="bottom" id="qxl-rz-C09"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="glY-bv-7RR" secondAttribute="trailing" id="uDV-ED-EhO"/>
-                <constraint firstItem="glY-bv-7RR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wZb-qf-hd4"/>
+                <constraint firstItem="SKg-jL-qJd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="AIR-yM-BXb"/>
+                <constraint firstItem="SKg-jL-qJd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="cN7-oj-L9E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SKg-jL-qJd" secondAttribute="trailing" constant="10" id="htk-lk-cDJ"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <point key="canvasLocation" x="-138" y="21"/>
         </view>
     </objects>
     <resources>
