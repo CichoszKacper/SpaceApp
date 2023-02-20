@@ -5,28 +5,40 @@
 //  Created by Kacper Cichosz on 04/11/2022.
 //
 
-import UIKit
+import SwiftUI
+import Kingfisher
 
-class MainMenuViewModel: ViewModel, ViewModelProtocol {
-	var spacecrafts: Spacecraft?
+class MainMenuViewModel: ObservableObject {
+	@Published var spacecrafts: Spacecraft?
+	var averageColor: UIColor = .clear
 	
-	// MARK: - Updates and Errors
-	var update: ((MainMenuViewModel.UpdateType) -> Void)?
-	enum UpdateType {
-		case loading
-		case loaded
-		case reload
-	}
-	var error: ((MainMenuViewModel.ErrorType) -> Void)?
-	enum ErrorType {
-		case canNotProcessData
-	}
-	
-	func downloadData() {
-		NetworkManager.shared.downloadData(classType: Spacecraft.self,
-										   settingsKey: Constants.Networking.NetworkingAPIKey) { data, _, _ in
-			self.spacecrafts = data
-			self.update?(.loaded)
+	@MainActor func downloadSpacecrafts() async {
+		guard self.spacecrafts == nil else { return }
+		
+		do {
+			async let spacecrafts = try NetworkManager.shared.downloadSpacecrafts(settingsKey: Constants.Networking.NetworkingAPIKey)
+			
+			let spacecraftsResults = try await spacecrafts
+			
+			self.spacecrafts = spacecraftsResults
+		} catch {
+			print(error.localizedDescription)
 		}
+	}
+	
+	func downloadBackgroundImage() -> URL? {
+		let spacecraftToUseImage = self.returnRandomSpacecraft()
+		guard let url = URL(string: spacecraftToUseImage?.spacecraftConfig.imageURL ?? "") else {
+			return nil
+		}
+		
+		return url
+	}
+	
+	func returnRandomSpacecraft() -> Result? {
+		if let spacecrafts = self.spacecrafts?.results {
+				return spacecrafts.first(where: {$0.name == "Space Shuttle Challenger"})
+		}
+		return nil
 	}
 }
